@@ -1,0 +1,9 @@
+com/amazonaws/services/kinesis/samples/stocktrades/processor/StockTradeRecordProcessor.class
+com/amazonaws/services/kinesis/samples/stocktrades/processor/StockTradeRecordProcessorFactory.class
+com/amazonaws/services/kinesis/samples/stocktrades/processor/StockTradesProcessor.class
+com/amazonaws/services/kinesis/samples/stocktrades/writer/StockTradeGenerator.class
+com/amazonaws/services/kinesis/samples/stocktrades/writer/StockTradeGenerator$StockPrice.class
+com/amazonaws/services/kinesis/samples/stocktrades/processor/StockStats.class
+com/amazonaws/services/kinesis/samples/stocktrades/model/StockTrade$TradeType.class
+com/amazonaws/services/kinesis/samples/stocktrades/model/StockTrade.class
+com/amazonaws/services/kinesis/samples/stocktrades/writer/StockTradesWriter.class

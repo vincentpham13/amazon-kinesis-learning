@@ -1,0 +1,7 @@
+/mnt/c/Users/nhat.pham/Documents/kinesis/amazon-kinesis-learning/src/main/java/com/amazonaws/services/kinesis/samples/stocktrades/writer/StockTradeGenerator.java
+/mnt/c/Users/nhat.pham/Documents/kinesis/amazon-kinesis-learning/src/main/java/com/amazonaws/services/kinesis/samples/stocktrades/processor/StockTradeRecordProcessor.java
+/mnt/c/Users/nhat.pham/Documents/kinesis/amazon-kinesis-learning/src/main/java/com/amazonaws/services/kinesis/samples/stocktrades/model/StockTrade.java
+/mnt/c/Users/nhat.pham/Documents/kinesis/amazon-kinesis-learning/src/main/java/com/amazonaws/services/kinesis/samples/stocktrades/processor/StockTradesProcessor.java
+/mnt/c/Users/nhat.pham/Documents/kinesis/amazon-kinesis-learning/src/main/java/com/amazonaws/services/kinesis/samples/stocktrades/writer/StockTradesWriter.java
+/mnt/c/Users/nhat.pham/Documents/kinesis/amazon-kinesis-learning/src/main/java/com/amazonaws/services/kinesis/samples/stocktrades/processor/StockTradeRecordProcessorFactory.java
+/mnt/c/Users/nhat.pham/Documents/kinesis/amazon-kinesis-learning/src/main/java/com/amazonaws/services/kinesis/samples/stocktrades/processor/StockStats.java

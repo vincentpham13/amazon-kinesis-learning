@@ -1,0 +1,38 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+  
+    // {
+    //   "type": "java",
+    //   "name": "Launch Current File",
+    //   "request": "launch",
+    //   "mainClass": "${file}"
+    // },
+    {
+      "type": "java",
+      "name": "Launch StockTradesProcessor",
+      "request": "launch",
+      "mainClass": "com.amazonaws.services.kinesis.samples.stocktrades.processor.StockTradesProcessor",
+      "args": "StockTradesProcessor StockTradeStream us-east-1",
+      "projectName": "amazon-kinesis-learning"
+    },
+    {
+      "type": "java",
+      "name": "Launch StockTradesWriter",
+      "request": "launch",
+      "mainClass": "com.amazonaws.services.kinesis.samples.stocktrades.writer.StockTradesWriter",
+      "args": "StockTradeStream us-east-1",
+      "projectName": "amazon-kinesis-learning"
+    },
+  ],
+  "compounds": [
+    {
+      "name": "Server/Client",
+      "configurations": ["Launch StockTradesWriter", "Launch StockTradesProcessor"],
+      // "preLaunchTask": "${defaultBuildTask}"
+    }
+  ]
+}

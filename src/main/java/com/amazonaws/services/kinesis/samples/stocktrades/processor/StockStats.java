@@ -34,12 +34,17 @@ public class StockStats {
     // Keeps the ticker symbol for the most popular stock for each trade type
     private EnumMap<TradeType, String> mostPopularByTradeType;
 
+    // Ticker symbol of the stock that had the largest quantity of shares sold
+    private String largestSellOrderStock;
+    // Quantity of shares for the largest sell order trade
+    private long largestSellOrderQuantity;
+
     /**
      * Constructor.
      */
     public StockStats() {
         countsByTradeType = new EnumMap<TradeType, Map<String, Long>>(TradeType.class);
-        for (TradeType tradeType: TradeType.values()) {
+        for (TradeType tradeType : TradeType.values()) {
             countsByTradeType.put(tradeType, new HashMap<String, Long>());
         }
 
@@ -63,18 +68,27 @@ public class StockStats {
 
         // update most popular stock
         String mostPopular = mostPopularByTradeType.get(type);
-        if (mostPopular == null ||
-                countsByTradeType.get(type).get(mostPopular) < count) {
+        if (mostPopular == null || countsByTradeType.get(type).get(mostPopular) < count) {
             mostPopularByTradeType.put(type, trade.getTickerSymbol());
         }
+
+        if (type == TradeType.SELL) {
+            if (largestSellOrderStock == null || trade.getQuantity() > largestSellOrderQuantity) {
+                largestSellOrderStock = trade.getTickerSymbol();
+                largestSellOrderQuantity = trade.getQuantity();
+            }
+        }
+
     }
 
     public String toString() {
         return String.format(
-                "Most popular stock being bought: %s, %d buys.%n" +
-                "Most popular stock being sold: %s, %d sells.",
-                getMostPopularStock(TradeType.BUY), getMostPopularStockCount(TradeType.BUY),
-                getMostPopularStock(TradeType.SELL), getMostPopularStockCount(TradeType.SELL));
+            "Most popular stock being bought: %s, %d buys.%n" +
+            "Most popular stock being sold: %s, %d sells.%n" +
+            "Largest sell order: %d shares of %s.",
+            getMostPopularStock(TradeType.BUY), getMostPopularStockCount(TradeType.BUY),
+            getMostPopularStock(TradeType.SELL), getMostPopularStockCount(TradeType.SELL),
+            largestSellOrderQuantity, largestSellOrderStock);
     }
 
     private String getMostPopularStock(TradeType tradeType) {
